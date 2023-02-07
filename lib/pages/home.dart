@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BandNames', style: TextStyle( color: Colors.black87 ) ),
+        title: const Text('La gallada', style: TextStyle( color: Colors.black87 ) ),
         backgroundColor: Colors.white,
         elevation: 1,
         actions: <Widget>[
@@ -67,20 +67,19 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(
-        children: <Widget>[
-
-          _showGraph(),
-
-          Expanded(
-            child: ListView.builder(
-              itemCount: bands.length,
-              itemBuilder: ( context, i ) => _bandTile( bands[i] )
-            ),
-          )
-
-        ],
-      ),
+      body: socketService.serverStatus == ServerStatus.Online
+          ? Column(
+              children: [
+                _showGraph(),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: bands.length,
+                    itemBuilder: (BuildContext context, int index) => _bandTile(bands[index]),
+                  ),
+                ),
+              ],
+            )
+          : null,
       floatingActionButton: FloatingActionButton(
         child: const Icon( Icons.add ),
         elevation: 1,
