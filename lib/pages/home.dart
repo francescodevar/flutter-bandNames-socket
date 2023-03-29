@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('La gallada', style: TextStyle( color: Colors.black87 ) ),
+        title: const Text('Names', style: TextStyle( color: Colors.black87 ) ),
         backgroundColor: Colors.white,
         elevation: 1,
         actions: <Widget>[
@@ -182,11 +182,14 @@ class _HomePageState extends State<HomePage> {
 
     Map<String, double> dataMap = {};
     // dataMap.putIfAbsent('Flutter', () => 5);
-    bands.forEach((band) {
+    for (var band in bands) {
       dataMap.putIfAbsent( band.name, () => band.votes.toDouble() );
-    });
+    }
     
-    return Container(
+    if( dataMap.isEmpty ){
+      return const SizedBox(height: 0, width: 0);
+    } else {
+      return  Container(
       padding: const EdgeInsets.only(top: 10),
       width: double.infinity,
       height: 200,
@@ -194,6 +197,8 @@ class _HomePageState extends State<HomePage> {
           dataMap: dataMap
       )
     );
-  }
+    }
+}
+
 
 }
