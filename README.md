@@ -1,16 +1,9 @@
 # band_names
 
-A new Flutter project.
+Real time flutter project with socket io, CRUD, Deteced internet conection.
 
-## Getting Started
+Server page
+https://flutter-socketio-server-production-965b.up.railway.app/
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/francescodevar/flutter-bandNames-socket/assets/67846639/1e3bab25-27bc-4ac9-b963-9c4dc6ac4e9f" width="300" height="600">
